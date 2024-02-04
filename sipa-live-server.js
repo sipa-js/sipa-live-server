@@ -2,7 +2,7 @@
 var path = require('path');
 var fs = require('fs');
 var assign = require('object-assign');
-var liveServer = require("./index");
+var sipaLiveServer = require("./index");
 
 var opts = {
 	host: process.env.IP,
@@ -15,7 +15,7 @@ var opts = {
 };
 
 var homeDir = process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME'];
-var configPath = path.join(homeDir, '.live-server.json');
+var configPath = path.join(homeDir, '.sipa-live-server.json');
 if (fs.existsSync(configPath)) {
 	var userConfig = fs.readFileSync(configPath, 'utf8');
 	assign(opts, JSON.parse(userConfig));
@@ -147,12 +147,12 @@ for (var i = process.argv.length - 1; i >= 2; --i) {
 		process.argv.splice(i, 1);
 	}
 	else if (arg === "--help" || arg === "-h") {
-		console.log('Usage: live-server [-v|--version] [-h|--help] [-q|--quiet] [--port=PORT] [--host=HOST] [--open=PATH] [--no-browser] [--browser=BROWSER] [--ignore=PATH] [--ignorePattern=RGXP] [--no-css-inject] [--entry-file=PATH] [--spa] [--mount=ROUTE:PATH] [--wait=MILLISECONDS] [--htpasswd=PATH] [--cors] [--https=PATH] [--https-module=MODULE_NAME] [--proxy=PATH] [PATH]');
+		console.log('Usage: sipa-live-server [-v|--version] [-h|--help] [-q|--quiet] [--port=PORT] [--host=HOST] [--open=PATH] [--no-browser] [--browser=BROWSER] [--ignore=PATH] [--ignorePattern=RGXP] [--no-css-inject] [--entry-file=PATH] [--spa] [--mount=ROUTE:PATH] [--wait=MILLISECONDS] [--htpasswd=PATH] [--cors] [--https=PATH] [--https-module=MODULE_NAME] [--proxy=PATH] [PATH]');
 		process.exit();
 	}
 	else if (arg === "--test") {
 		// Hidden param for tests to exit automatically
-		setTimeout(liveServer.shutdown, 500);
+		setTimeout(sipaLiveServer.shutdown, 500);
 		process.argv.splice(i, 1);
 	}
 }
@@ -171,4 +171,4 @@ if (opts.ignore) {
 	});
 }
 
-liveServer.start(opts);
+sipaLiveServer.start(opts);

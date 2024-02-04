@@ -1,7 +1,23 @@
 {
-  "name": "live-server",
-  "version": "1.2.2",
-  "description": "simple development http server with live reload capability",
+  "name": "sipa-live-server",
+  "version": "0.0.1",
+  "date": "2024-02-03T17:45:36.170Z",
+  "description": "A web development http server with live reload and hot reload capabilities",
+  "scripts": {
+    "lint": "eslint sipa-live-server.js index.js",
+    "hint": "jshint sipa-live-server.js index.js",
+    "test": "mocha test --exit && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sipa-js/sipa-live-server.git"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "jshint": "^2.9.6",
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0"
+  },
   "keywords": [
     "front-end",
     "development",
@@ -10,7 +26,15 @@
     "http",
     "cli"
   ],
-  "author": "Tapio Vierros",
+  "author": {
+    "name": "Matthäus J. N. Beyrle",
+    "email": "sipa-live-server.npm@mail.magynhard.de"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sipa-js/sipa-live-server/issues"
+  },
+  "homepage": "https://github.com/sipa-js/sipa-live-server#readme",
   "dependencies": {
     "chokidar": "^2.0.4",
     "colors": "1.4.0",
@@ -26,41 +50,11 @@
     "send": "latest",
     "serve-index": "^1.9.1"
   },
-  "devDependencies": {
-    "eslint": "^5.9.0",
-    "jshint": "^2.9.6",
-    "mocha": "^5.2.0",
-    "supertest": "^3.3.0"
-  },
-  "scripts": {
-    "lint": "eslint live-server.js index.js",
-    "hint": "jshint live-server.js index.js",
-    "test": "mocha test --exit && npm run lint"
-  },
   "bin": {
-    "live-server": "./live-server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tapio/live-server.git"
+    "sipa-live-server": "./sipa-live-server.js"
   },
   "engines": {
     "node": ">=0.10.0"
   },
-  "preferGlobal": true,
-  "license": "MIT",
-  "eslintConfig": {
-    "env": {
-      "node": true
-    },
-    "rules": {
-      "quotes": 0,
-      "curly": 0,
-      "strict": 0,
-      "no-process-exit": 0,
-      "eqeqeq": 1,
-      "no-unused-vars": 1,
-      "no-shadow": 1
-    }
-  }
+  "preferGlobal": true
 }
