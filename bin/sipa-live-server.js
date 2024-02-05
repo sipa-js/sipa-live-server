@@ -116,7 +116,7 @@ for (var i = process.argv.length - 1; i >= 2; --i) {
 		}
 	}
 	else if (arg === "--version" || arg === "-v") {
-		var packageJson = require('./package.json');
+		var packageJson = require('./../package.json');
 		console.log(packageJson.name, packageJson.version);
 		process.exit();
 	}
