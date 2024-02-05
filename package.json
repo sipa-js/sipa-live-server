@@ -8,6 +8,10 @@
     "hint": "jshint bin/sipa-live-server.js bin/index.js",
     "test": "mocha test --exit && npm run lint"
   },
+  "files": [
+    "bin/**/*",
+    "licenses/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/sipa-js/sipa-live-server.git"
