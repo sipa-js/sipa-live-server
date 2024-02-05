@@ -26,7 +26,7 @@ describe('https tests with external module', function() {
 		open: false,
 		https: path.join(__dirname, 'conf/https.conf.js')
 	};
-	var liveServer = require("..").start(opts);
+	var liveServer = require("../bin").start(opts);
 	tests(liveServer);
 	after(function () {
 		liveServer.close()
@@ -40,7 +40,7 @@ describe('https tests with object', function() {
 		open: false,
 		https: require(path.join(__dirname, 'conf/https.conf.js'))
 	};
-	var liveServer = require("..").start(opts);
+	var liveServer = require("../bin").start(opts);
 	tests(liveServer);
 	after(function () {
 		liveServer.close()

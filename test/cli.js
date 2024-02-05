@@ -1,7 +1,7 @@
 var assert = require('assert');
 var path = require('path');
 var exec = require('child_process').execFile;
-var cmd = path.join(__dirname, "..", "sipa-live-server.js");
+var cmd = path.join(__dirname, "..", "bin/sipa-live-server.js");
 var opts = {
 	timeout: 2000,
 	maxBuffer: 1024

@@ -1,11 +1,11 @@
 {
   "name": "sipa-live-server",
-  "version": "0.0.1",
-  "date": "2024-02-03T17:45:36.170Z",
+  "version": "0.0.2",
+  "date": "2024-02-05T17:45:36.170Z",
   "description": "A web development http server with live reload and hot reload capabilities",
   "scripts": {
-    "lint": "eslint sipa-live-server.js index.js",
-    "hint": "jshint sipa-live-server.js index.js",
+    "lint": "eslint bin/sipa-live-server.js bin/index.js",
+    "hint": "jshint bin/sipa-live-server.js bin/index.js",
     "test": "mocha test --exit && npm run lint"
   },
   "repository": {
@@ -51,7 +51,7 @@
     "serve-index": "^1.9.1"
   },
   "bin": {
-    "sipa-live-server": "./sipa-live-server.js"
+    "sipa-live-server": "./bin/sipa-live-server.js"
   },
   "engines": {
     "node": ">=0.10.0"
