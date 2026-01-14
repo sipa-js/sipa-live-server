@@ -42,7 +42,7 @@ function staticServer(root) {
 		if (req.method !== "GET" && req.method !== "HEAD") return next();
 		var reqpath = isFile ? "" : url.parse(req.url).pathname;
 		var hasNoOrigin = !req.headers.origin;
-		var injectCandidates = [ new RegExp("</body>", "i"), new RegExp("</svg>"), new RegExp("</head>", "i")];
+		var injectCandidates = [ new RegExp("</body>", "i"), new RegExp("</head>", "i")];
 		var injectTag = null;
 		var injectCount = 0
 
@@ -55,7 +55,7 @@ function staticServer(root) {
 
 		function file(filepath /*, stat*/) {
 			var x = path.extname(filepath).toLocaleLowerCase(), matches,
-				possibleExtensions = [ "", ".html", ".htm", ".xhtml", ".php", ".svg"];
+				possibleExtensions = [ "", ".html", ".htm", ".xhtml", ".php" ];
 			if (hasNoOrigin && (possibleExtensions.indexOf(x) > -1)) {
 				// TODO: Sync file read here is not nice, but we need to determine if the html should be injected or not
 				var contents = fs.readFileSync(filepath, "utf8");
