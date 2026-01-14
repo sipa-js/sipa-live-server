@@ -1,7 +1,7 @@
 {
   "name": "sipa-live-server",
-  "version": "0.0.3",
-  "date": "2024-02-05T17:45:36.170Z",
+  "version": "0.0.4",
+  "date": "2026-01-13T20:45:36.170Z",
   "description": "A web development http server with live reload and hot reload capabilities",
   "scripts": {
     "lint": "eslint bin/sipa-live-server.js bin/index.js",
