@@ -8,7 +8,7 @@ var fs = require('fs'),
 	url = require('url'),
 	http = require('http'),
 	send = require('send'),
-	open = require('opn'),
+	open = require('open').default,
 	es = require("event-stream"),
 	os = require('os'),
 	chokidar = require('chokidar');
@@ -304,10 +304,10 @@ LiveServer.start = function(options) {
 		if (openPath !== null)
 			if (typeof openPath === "object") {
 				openPath.forEach(function(p) {
-					open(openURL + p, {app: browser});
+					open(openURL + p, {app: { name: browser }});
 				});
 			} else {
-				open(openURL + openPath, {app: browser});
+				open(openURL + openPath, {app: { name: browser }});
 			}
 	});
 

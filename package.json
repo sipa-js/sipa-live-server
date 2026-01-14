@@ -1,6 +1,6 @@
 {
   "name": "sipa-live-server",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "date": "2026-01-13T20:45:36.170Z",
   "description": "A web development http server with live reload and hot reload capabilities",
   "scripts": {
@@ -49,7 +49,7 @@
     "http-auth": "3.1.x",
     "morgan": "^1.9.1",
     "object-assign": "latest",
-    "opn": "latest",
+    "open": "^11.0.0",
     "proxy-middleware": "latest",
     "send": "latest",
     "serve-index": "^1.9.1"
@@ -58,7 +58,7 @@
     "sipa-live-server": "./bin/sipa-live-server.js"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=22"
   },
   "preferGlobal": true
 }
