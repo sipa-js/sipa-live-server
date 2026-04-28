@@ -15,7 +15,10 @@ var opts = {
 };
 
 var homeDir = process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME'];
-var configPath = path.join(homeDir, '.sipa-live-server.json');
+var configPath = path.join(process.cwd(), '.sipa-live-server.json');
+if (!fs.existsSync(configPath)) {
+	configPath = path.join(homeDir, '.sipa-live-server.json');
+}
 if (fs.existsSync(configPath)) {
 	var userConfig = fs.readFileSync(configPath, 'utf8');
 	assign(opts, JSON.parse(userConfig));

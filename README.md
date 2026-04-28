@@ -115,7 +115,9 @@ Command line parameters:
 
 Default options:
 
-If a file `~/.sipa-live-server.json` exists it will be loaded and used as default options for sipa-live-server on the command line. See "Usage from node" for option names.
+If a file `./.sipa-live-server.json` exists in the current working directory, it will be loaded and used as default options for sipa-live-server on the command line.
+If not, `~/.sipa-live-server.json` will be used when present.
+See "Usage from node" for option names.
 
 
 
